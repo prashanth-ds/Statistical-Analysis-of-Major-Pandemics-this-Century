@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block body-block %}
+<div class="container">
+            <h2 style="text-align: center; padding: 100px 10px 1px 10px; color: darkslategray; font-family: Verdana"><b>Major Pandemics This Century</b></h2>
+            <div class="buttons">
+                <div class="btn-group">
+                    <a  href="{% url 'Covid:world_list' %}">
+                        <button id="b1" type="button" class="btn btn-outline-danger btn-rounded waves-effect">Covid</button>
+                    </a>
+                </div>
+                <div class="btn-group">
+                    <a href="{% url 'Covid:india_list' %}">
+                        <button id="b2" type="button" class="btn btn-outline-danger btn-rounded waves-effect">Covid-India</button>
+                    </a>
+                </div>
+                <div class="btn-group">
+                    <a href="{% url 'Ebola:ebola_list' %}">
+                        <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">Ebola</button>
+                    </a>
+                </div>
+                <div class="btn-group">
+                    <a href="{% url 'H1N1:h1n1_list' %}">
+                        <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">H1N1</button>
+                    </a>
+                </div>
+            </div>
+{% endblock %}

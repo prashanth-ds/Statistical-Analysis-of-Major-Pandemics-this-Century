@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Pandemics</title>
+        <link rel="shortcut icon" href="{% static 'Pandemics/images/0.png' %}">
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <link rel="stylesheet"  href="https://cdn.datatables.net/v/dt/dt-1.10.23/datatables.min.css"/>
+        <script src="https://cdn.datatables.net/v/dt/dt-1.10.23/datatables.min.js"></script>
+
+        <link rel="stylesheet" href={% static 'Pandemics/css/nav.css' %}>
+
+        <style>
+            table.dataTable thead .sorting:after,
+            table.dataTable thead .sorting:before,
+            table.dataTable thead .sorting_asc:after,
+            table.dataTable thead .sorting_asc:before,
+            table.dataTable thead .sorting_asc_disabled:after,
+            table.dataTable thead .sorting_asc_disabled:before,
+            table.dataTable thead .sorting_desc:after,
+            table.dataTable thead .sorting_desc:before,
+            table.dataTable thead .sorting_desc_disabled:after,
+            table.dataTable thead .sorting_desc_disabled:before {
+              bottom: .5em;
+            }
+        </style>
+    </head>
+    <body id="bg-color" style="background-image: url('{% static "Pandemics/images/background.jpeg" %}');" >
+        <header>
+            <img class="logo_pan " src="{% static 'Pandemics/images/cover.png' %}" alt="logo">
+            <nav>
+                <ul class="nav_links_pan">
+                    <li><a style="color: #24252A;" href="{% url 'Covid:world_list' %}">Covid</a></li>
+                    <li><a style="color: #24252A;" href="{% url 'Covid:india_list' %}">Covid-India</a></li>
+                    <li><a style="color: #24252A;" href="{% url 'Ebola:ebola_list' %}">Ebola</a></li>
+                    <li><a style="color: #24252A;" href="{% url 'H1N1:h1n1_list' %}">H1N1</a></li>
+                </ul>
+            </nav>
+           <a href="{% url 'initial' %}"><button style="margin-top: -15px" class="cta">Home</button></a>
+        </header>
+
+        <div class="spacing"></div>
+
+        {% block body-block %}
+
+        {% endblock %}
+
+        {% block js %}
+
+        {% endblock %}
+
+    </body>
+</html>

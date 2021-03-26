@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block body-block %}
+
+    <div class="container">
+    <h3 style="font-family: Verdana; padding-bottom: 35px;"><b>H1N1</b></h3>
+        <div style="width: 550px; height: 470px; float: left;">
+            {% autoescape off %}
+                {{ total_cases_bar_graph }}
+            {% endautoescape %}
+        </div>
+        <div style="width: 550px; height: 470px; float: right;">
+            {% autoescape off %}
+                {{ total_deaths_bar_graph }}
+            {% endautoescape %}
+        </div>
+        <div style="clear: both;"></div>
+        <div>
+            {% autoescape off %}
+                {{ total_cases_world_map }}
+            {% endautoescape %}
+        </div>
+
+        <button style="margin-bottom: 25px;"type="button" class="btn btn-secondary" data-toggle="modal" data-target="#mailing">
+            CSV
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="mailing" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Mail Data </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="" method="get">
+                    {% csrf_token %}
+                  <div class="form-group">
+                    <label for="text">Name</label>
+                    <input type="text" class="form-control" id="text" name="name-user" placeholder="Enter Your Name">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email-id" placeholder="Enter Your Mail-ID">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                  <button type="submit" class="btn btn-outline-dark">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% if H1N1Data %}
+            <table id="each_h1n1" class="table table-bordered table-hover table-striped "
+                   style="background-color: mistyrose;">
+                <thead>
+                    <tr>
+                        <th scope="col" class="th-sm"><b>#</b></th>
+                        <th scope="col" class="th-sm"><b>Country</b></th>
+                        <th scope="col" class="th-sm ora"><b>Total cases</b></th>
+                        <th scope="col" class="th-sm red"><b>Total Deaths</b></th>
+                    </tr>
+                </thead>
+            <tbody>
+                {% for data in H1N1Data %}
+                    <tr>
+                        <th scope="row"> {{data.id }}</th>
+                        <td><b>{{ data.country }}</b></td>
+                        <td>{{ data.total_cases }}</td>
+                        <td>{{ data.total_deaths }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            </table>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block js %}
+
+    <script>
+        $(document).ready(function () {
+        $('#each_h1n1').DataTable({
+            'aLengthMenu' : [[5,10, 15, -1], [5,10,15, "All"]], {# here the first list is the actual values of pagination and second list is the repr on the screem #}
+            'iDisplayLength' :15 {# this is the intital value when the page loads #}
+        });
+        $('.dataTables_length').addClass('bs-select');
+        });
+    </script>
+
+{% endblock %}

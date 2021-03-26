@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{#<html lang="en">
+{% block body-block %}
+
+    <div class="container">
+        <h3 style="font-family: Verdana; padding-bottom: 35px;"><b>Ebola</b></h3>
+        {% autoescape off %}
+            {{ stacked_bar_chart }}
+            {{ world_map_total_cases }}
+        {% endautoescape %}
+
+        <button style="margin-bottom: 25px;"type="button" class="btn btn-secondary" data-toggle="modal" data-target="#mailing">
+            CSV
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="mailing" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Mail Data </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="" method="get">
+                    {% csrf_token %}
+                  <div class="form-group">
+                    <label for="text">Name</label>
+                    <input type="text" class="form-control" id="text" name="name-user" placeholder="Enter Your Name">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email-id" placeholder="Enter Your Mail-ID">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                  <button type="submit" class="btn btn-outline-dark">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% if EbolaData %}
+            <table id="each_ebola" class="table table-bordered table-hover table-striped "
+                   style="background-color: mistyrose">
+                <thead>
+                    <tr>
+                        <th scope="col" class="th-sm"><b>#</b></th>
+                        <th scope="col" class="th-sm"><b>Country</b></th>
+                        <th scope="col" class="th-sm ora"><b>Total cases</b></th>
+                        <th scope="col" class="th-sm red"><b>Total Deaths</b></th>
+                    </tr>
+                </thead>
+            <tbody>
+                {% for data in EbolaData %}
+                    <tr>
+                        <th scope="row">{{ data.id }}</th>
+                        <td><b>{{ data.country }}</b></td>
+                        <td>{{ data.total_cases }}</td>
+                        <td>{{ data.total_deaths }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            </table>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block js %}
+
+    <script>
+        $(document).ready(function () {
+        $('#each_ebola').DataTable({
+            'aLengthMenu' : [[5,10, -1], [5,10, "All"]],
+            'iDisplayLength' :-1
+        });
+        $('.dataTables_length').addClass('bs-select');
+        });
+    </script>
+
+{% endblock %}
+{

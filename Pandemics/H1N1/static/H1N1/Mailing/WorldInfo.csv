@@ -1,0 +1,160 @@
+ID,Country,Total Cases,Total Deaths
+1,USA,60800000,12469
+2,Germany,203713,122
+3,Portugal,156701,51
+4,China,120940,659
+5,South Korea,108234,170
+6,Belgium,76973,14
+7,Canada,59568,506
+8,Mexico,50234,398
+9,Australia,37537,191
+10,Hong Kong,32091,55
+11,Thailand,28939,192
+12,Brazil,28886,1205
+13,United Kingdom,27464,457
+14,Spain,22379,232
+15,Russia,20838,438
+16,India,19947,1035
+17,Bahrain,13036,7
+18,Norway,12654,29
+19,South Africa,12631,93
+20,Turkey,12316,458
+21,Chile,12252,132
+22,Egypt,11765,210
+23,Japan,11636,107
+24,Vietnam,10791,53
+25,Saudi Arabia,9355,124
+26,Peru,9268,221
+27,Argentina,9119,580
+28,Greece,8768,52
+29,Iceland,8650,2
+30,Kuwait,7718,27
+31,Malaysia,7066,77
+32,Finland,6122,36
+33,Russia,5613,106
+34,Taiwan,5474,35
+35,Philippines,5212,30
+36,France,5126,196
+37,Romania,4979,29
+38,Oman,4837,31
+39,Israel,4330,81
+40,Colombia,4310,272
+41,Iran,3672,147
+42,Italy,3593,178
+43,Ireland,3189,20
+44,New Zealand,3175,19
+45,Uruguay,3056,33
+46,Morocco,2980,50
+47,Jordan,2794,19
+48,Macedonia,2600,14
+49,Bolivia,2269,56
+50,Iraq,2130,42
+51,Sweden,2130,20
+52,Yemen,2070,28
+53,Poland,2024,116
+54,Ecuador,2002,67
+55,Turkey,1870,415
+56,Venezuela,1782,91
+57,Switzerland,1550,8
+58,Lebanon,1500,5
+59,Netherlands,1473,51
+60,Latvia,1321,24
+61,Singapore,1217,19
+62,Tunisia,1200,18
+63,Palestine,1170,28
+64,Indonesia,1097,10
+65,Mongolia,1073,26
+66,Moldova,1024,15
+67,Slovenia,990,11
+68,Brunei,971,1
+69,Austria,964,5
+70,Madagascar,877,3
+71,Bangladesh,800,6
+72,Afghanistan,779,17
+73,Czech Republic,777,38
+74,Bulgaria,766,23
+75,Malta,718,5
+76,Paraguay,682,42
+77,Tanzania,677,1
+78,Algeria,672,47
+79,Denmark,651,21
+80,Georgia,604,5
+81,Bosnia and Herzegovina,558,7
+82,Qatar,550,8
+83,Croatia,526,22
+84,Serbia,520,41
+85,Estonia,456,7
+86,Kenya,417,0
+87,Luxembourg,333,2
+88,Rwanda,331,0
+89,Cambodia,313,6
+90,Albania,310,3
+91,Cyprus,297,1
+92,Cyprus,297,2
+93,Hungary,283,37
+94,Sri Lanka,258,36
+95,Uganda,251,0
+96,Laos,242,1
+97,Jersey,234,0
+98,Libya,233,1
+99,Syria,230,127
+100,Democratic Republic of Congo,222,0
+101,French Guiana,191,1
+102,Slovakia,171,21
+103,Sudan,145,5
+104,Nepal,145,2
+105,United Arab Emirates,125,6
+106,Georgia,120,18
+107,Montenegro,119,2
+108,Belarus,102,20
+109,Mozambique,101,2
+110,Kosovo,98,10
+111,Zambia,90,0
+112,Ukraine,85,16
+113,Armenia,80,2
+114,Isle of Man,75,0
+115,Guyana,73,0
+116,Namibia,72,1
+117,Mauritius,69,8
+118,Lithuania,68,12
+119,Suriname,67,2
+120,Lesotho,65,0
+121,Myanmar,65,0
+122,Kyrgyzstan,63,0
+123,Cape Verde,62,0
+124,Akrotiri and Dhekelia,58,0
+125,Ghana,54,0
+126,North Korea,50,10
+127,Faroe Islands,44,0
+128,São Tomé and Príncipe,41,2
+129,Zimbabwe,41,0
+130,Angola,37,0
+131,Monaco,36,0
+132,Seychelles,33,0
+133,Armenia,25,3
+134,Botswana,23,0
+135,Republic of the Congo,21,0
+136,Kazakhstan,17,0
+137,Guernsey,17,0
+138,Kazakhstan,17,0
+139,Tajikistan,16,0
+140,Azerbaijan,14,2
+141,Azerbaijan,14,2
+142,Liechtenstein,13,0
+143,Nigeria,11,2
+144,Pakistan,11,14
+145,Djibouti,9,0
+146,Burundi,7,0
+147,Mali,7,0
+148,Falkland Islands,7,1
+149,Ethiopia,6,0
+150,Maldives,6,1
+151,Bhutan,6,0
+152,Timor-Leste,6,0
+153,San Marino,5,0
+154,Cameroon,4,0
+155,Malawi,4,0
+156,Côte d'Ivoire,3,0
+157,Swaziland,2,0
+158,Gabon,1,0
+159,Andorra,1,0

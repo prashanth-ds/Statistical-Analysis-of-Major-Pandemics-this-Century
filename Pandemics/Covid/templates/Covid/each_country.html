@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+{% block body-block %}
+
+<body>
+    <div class="container">
+        <h3 style="font-family: Verdana; padding-bottom: 35px;"><b>{{ country }}</b></h3>
+        {% autoescape off %}
+            {{ lin_graph_new_D_C }}
+        {% endautoescape %}
+        <br>
+        <!-- Button trigger modal -->
+        <button style="margin-bottom: 25px;" type="button" class="btn btn-secondary" data-toggle="modal" data-target="#prediction">
+          Prediction
+        </button>
+
+        <button style="margin-bottom: 25px;"type="button" class="btn btn-secondary" data-toggle="modal" data-target="#mailing">
+            CSV
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="mailing" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Mail Data </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="" method="get">
+                    {% csrf_token %}
+                  <div class="form-group">
+                    <label for="text">Name</label>
+                    <input type="text" class="form-control" id="text" name="name-user" placeholder="Enter Your Name">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email-id" placeholder="Enter Your Mail-ID">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                  <button type="submit" class="btn btn-outline-dark">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="prediction" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Prediction</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  {% for i in today %}
+                      <h5>{{ i.now }}</h5>
+                      <li>Actual Cases  >>  <strong>{{ i.present }}</strong></li>
+                      <li>Predicted Cases  >>  <strong>{{ i.future }}</strong></li>
+                      <h4>Accuracy >>  <strong>{{ prediction }}%</strong></h4>
+                  {% endfor %}
+                  <br>
+                  <h3>Future Predictions</h3>
+                  {% for i in future_five %}
+                      <li>{{ i.now }}   >>   <strong>{{ i.future }}</strong></li>
+                  {% endfor %}
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% if country_details %}
+            <table id="each_detail" class="table table-bordered table-hover table-striped "
+                   style="background-color: mistyrose;">
+                <thead>
+                    <tr>
+                        <th scope="col" class="th-sm">Reported Date</th>
+                        <!--<th scope="col" class="th-sm">Country</th>-->
+                        <th scope="col" class="th-sm">New Cases</th>
+                        <th scope="col" class="th-sm">Cumulative  Cases</th>
+                        <th scope="col" class="th-sm">New Deaths</th>
+                        <th scope="col" class="th-sm">Cumulative Deaths</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for date in country_details %}
+                        <tr>
+                            <th scope="row">{{ date.date_reported }}</th>
+                            <!--<th>{{ date.country }}</th>-->
+                            {% if date.new_cases == '0'%}
+                                <th>{{ date.new_cases }}</th>
+                            {% else %}
+                                <th class="ora">+{{ date.new_cases }}</th>
+                            {% endif %}
+                            <th>{{ date.cumulative_cases }}</th>
+                            {% if date.new_deaths == '0'%}
+                                <th>{{ date.new_deaths }}</th>
+                            {% else %}
+                                <th class="red">+{{ date.new_deaths }}</th>
+                            {% endif %}
+                            <th>{{ date.cumulative_deaths }}</th>
+                        </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        {% endif %}
+    </div>
+</body>
+
+{% endblock %}
+
+{% block js %}
+
+    <script>
+        $(document).ready(function () {
+        $('#each_detail').DataTable({
+            columnDefs: [
+                {orderable:false, targets:0}
+            ],
+            'order':[],
+
+            'aLengthMenu' : [[5,10,15,30, -1], [5,10,15,30, "All"]],
+            'iDisplayLength' :30
+        });
+        $('.dataTables_length').addClass('bs-select');
+        });
+    </script>
+
+{% endblock %}

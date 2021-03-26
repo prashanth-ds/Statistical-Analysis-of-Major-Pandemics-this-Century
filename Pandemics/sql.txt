@@ -1,0 +1,39 @@
+Here below code is a stored procedure ,
+-----------------------------------------------------------------------------------------------
+SET SQL_SAFE_UPDATES = 0;
+
+delimiter  //
+create procedure join_stats_testing( in state varchar(50) )
+begin
+SELECT ci.date, ci.state_unionT, ci.cured, ci.death, ci.confirmed_total,
+cit.total_samples "total_samples", cit.positive "positive",
+cit.negative "negative" FROM pandemics.covid_india ci,
+pandemics.covid_india_testing cit where ci.date = cit.date_testing and ci.state_unionT= state
+group by ci.date, ci.state_unionT, ci.cured, ci.death, ci.confirmed_total;
+end //
+delimiter ;
+-----------------------------------------------------------------------------------------------
+
+Triggers used,
+
+delimiter //
+create trigger who_auto
+	after insert
+    on pandemics.covid_world_who for each row
+    update pandemics.data_automation SET who_country = 1 where dates = curdate()//
+delimiter ;
+
+delimiter //
+create trigger states_auto
+	after insert
+    on pandemics.covid_india for each row
+    update pandemics.data_automation SET indian_states = 1 where dates = curdate()//
+delimiter ;
+
+delimiter //
+create trigger states_testing_auto
+	after insert
+    on pandemics.covid_india_testing for each row
+    update pandemics.data_automation SET indian_states_testing = 1 where dates = curdate()//
+delimiter ;
+
