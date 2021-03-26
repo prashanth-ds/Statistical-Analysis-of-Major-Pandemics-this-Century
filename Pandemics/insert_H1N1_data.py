@@ -16,10 +16,10 @@ f_name = [r'downloaded data/H1N1/summary_africa.csv', r'downloaded data/H1N1/sum
 data = []
 flag = r'downloaded data/H1N1/summary_south_america.csv'
 
-for key in f_name:
-    if key == flag: reps = 1
+for k in f_name:
+    if k == flag: reps = 1
     else: reps =0
-    with open(key, 'r') as file:
+    with open(k, 'r') as file:
         csv_data = csv.reader(file)
         next(csv_data)
         for i in csv_data:
