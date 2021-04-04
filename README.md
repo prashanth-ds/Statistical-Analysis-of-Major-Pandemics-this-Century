@@ -35,13 +35,14 @@ Official Documentation -> https://dev.mysql.com/doc/
 
 
 ###### Landing Page
-![land](https://drive.google.com/file/d/1qyTFxcaim2iisMz_JrWlX9Jbe3lSnDMd/view?usp=sharing)
+![land](https://drive.google.com/file/d/1eakz4KFNQiMSeSpcXe3oZr-26yyULA9B/view?usp=sharing)
 
 ###### Data
 ![table](https://drive.google.com/file/d/1hJbwuzzHjZxpo3rpzNUYfnp-jjgc3dyF/view?usp=sharing)
 
 ###### Graphical Visualization
 ![world](https://drive.google.com/file/d/1ifB4zbE9uoKZpTO-mal_EIwipkQ0_noD/view?usp=sharing)
+<br/>
 ![india](https://drive.google.com/file/d/1pWE1icUXpQQpqJ7piMkVnLjf-XWWevvl/view?usp=sharing)
 
 ###### Prediction
