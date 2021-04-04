@@ -43,6 +43,7 @@ Official Documentation -> https://dev.mysql.com/doc/
 ###### Graphical Visualization
 ![world](https://github.com/prashanth-ds/Statistical-And-Graphical-Analysis-of-Major-Pandemics-this-Century/blob/master/Pandemics/static/Pandemics/Snapshots/gr_map.jpg)
 <br/>
+<br/>
 ![india](https://github.com/prashanth-ds/Statistical-And-Graphical-Analysis-of-Major-Pandemics-this-Century/blob/master/Pandemics/static/Pandemics/Snapshots/in_map.jpg)
 
 ###### Prediction
