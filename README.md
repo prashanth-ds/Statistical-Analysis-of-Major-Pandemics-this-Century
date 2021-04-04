@@ -29,7 +29,7 @@ Official Documentation -> https://dev.mysql.com/doc/
 - DataTables(Front-End).
 
 ## Data 
-> - Web Scraping -> https://www.worldometers.info/coronavirus
+Web Scraping -> https://www.worldometers.info/coronavirus
 <!---
 > - All Countries -> https://covid19.who.int
 > - Indian States -> https://www.kaggle.com/sudalairajkumar/covid19-in-india
