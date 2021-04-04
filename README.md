@@ -35,18 +35,18 @@ Official Documentation -> https://dev.mysql.com/doc/
 
 
 ###### Landing Page
-![land](https://drive.google.com/file/d/1eakz4KFNQiMSeSpcXe3oZr-26yyULA9B/view?usp=sharing)
+![land](https://github.com/prashanth-ds/Statistical-And-Graphical-Analysis-of-Major-Pandemics-this-Century/blob/master/Pandemics/static/Pandemics/Snapshots/land.jpg)
 
 ###### Data
-![table](https://drive.google.com/file/d/1hJbwuzzHjZxpo3rpzNUYfnp-jjgc3dyF/view?usp=sharing)
+![table](https://github.com/prashanth-ds/Statistical-And-Graphical-Analysis-of-Major-Pandemics-this-Century/blob/master/Pandemics/static/Pandemics/Snapshots/table.jpg)
 
 ###### Graphical Visualization
-![world](https://drive.google.com/file/d/1ifB4zbE9uoKZpTO-mal_EIwipkQ0_noD/view?usp=sharing)
+![world](https://github.com/prashanth-ds/Statistical-And-Graphical-Analysis-of-Major-Pandemics-this-Century/blob/master/Pandemics/static/Pandemics/Snapshots/gr_map.jpg)
 <br/>
-![india](https://drive.google.com/file/d/1pWE1icUXpQQpqJ7piMkVnLjf-XWWevvl/view?usp=sharing)
+![india](https://github.com/prashanth-ds/Statistical-And-Graphical-Analysis-of-Major-Pandemics-this-Century/blob/master/Pandemics/static/Pandemics/Snapshots/in_map.jpg)
 
 ###### Prediction
-![Pred](https://drive.google.com/file/d/1NTCVxk6cRGX-01jCnSDQ7s6Qn-pu7lbH/view?usp=sharing)
+![Pred](https://github.com/prashanth-ds/Statistical-And-Graphical-Analysis-of-Major-Pandemics-this-Century/blob/master/Pandemics/static/Pandemics/Snapshots/pred.jpg)
 
 ###### Mailing CSV File
-![mail](https://drive.google.com/file/d/1hDIlCcTlAP31gv4m1ZBE-ZUaObRP57mc/view?usp=sharing)
+![mail](https://github.com/prashanth-ds/Statistical-And-Graphical-Analysis-of-Major-Pandemics-this-Century/blob/master/Pandemics/static/Pandemics/Snapshots/mail.jpg)
