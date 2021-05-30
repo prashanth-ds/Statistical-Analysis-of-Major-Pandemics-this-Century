@@ -9,7 +9,7 @@
 
 
 ### Any Queries
-[Mail Me](prashanthds258@gmail.com)
+Mail Me- <prashanthds258@gmail.com>
 
 ## Django WebApp with MySql Database
 
