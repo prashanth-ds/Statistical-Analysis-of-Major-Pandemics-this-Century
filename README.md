@@ -1,6 +1,6 @@
 # Statistical-And-Graphical-Analysis-of-Major-Pandemics-this-Century
 
-> 3 Pandemics
+> Three Pandemics
 >  - Covid19
 >     - All Countries
 >     - Indian States
